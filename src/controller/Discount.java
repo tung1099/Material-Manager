@@ -1,4 +1,4 @@
-package com.company;
+package controller;
 
 public interface Discount {
     double getRealMoney();

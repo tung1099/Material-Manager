@@ -1,8 +1,10 @@
-package com.company;
+package model;
+
+import model.Material;
 
 import java.time.LocalDate;
 
-public class CrispyFlour extends Material{
+public class CrispyFlour extends Material {
     private int quantity;
 
     public CrispyFlour() {
@@ -26,7 +28,7 @@ public class CrispyFlour extends Material{
     }
 
     @Override
-    public double getAmount() {
+    public double getPrice() {
        return quantity * getCost();
     }
 
@@ -40,21 +42,21 @@ public class CrispyFlour extends Material{
         LocalDate today = LocalDate.now();
         if (today.isBefore(getExpiryDate())&&
                 (today.isAfter(getExpiryDate().minusMonths(2)))){
-            System.out.println("--> Giá bột đang giảm 40%: ");
+//            System.out.println("--> Giá bột đang giảm 40%: ");
 
-            return getAmount()*0.6;
+            return getPrice()*0.6;
         }
         else if(today.isBefore(getExpiryDate().minusMonths(2)) &&
                 (today.isAfter(getExpiryDate().minusMonths(4)))){
-            System.out.println("--> Giá bột đang giảm 20%: ");
+//            System.out.println("--> Giá bột đang giảm 20%: ");
 
-            return getAmount()*0.8;
+            return getPrice()*0.8;
         }
         else if(today.isBefore(getExpiryDate().minusMonths(4))&&
                 (today.isAfter(getManufacturingDate()))){
-            System.out.println("--> Giá bột đang giảm 5%: ");
+//            System.out.println("--> Giá bột đang giảm 5%: ");
 
-            return getAmount()*0.95;
+            return getPrice()*0.95;
         }
         else {
             System.out.println("!@##$$ Bột đã hết hạn: ");

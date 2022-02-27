@@ -1,4 +1,6 @@
-package com.company;
+package model;
+
+import model.Material;
 
 import java.time.LocalDate;
 
@@ -6,6 +8,11 @@ public class Meat extends Material {
     private double weight;
 
     public Meat() {
+    }
+
+    @Override
+    public double getPrice() {
+        return getCost() * weight;
     }
 
     public Meat(double weight) {
@@ -25,10 +32,7 @@ public class Meat extends Material {
         this.weight = weight;
     }
 
-    @Override
-    public double getAmount() {
-        return weight * getCost();
-    }
+
 
     @Override
     public LocalDate getExpiryDate() {
@@ -40,12 +44,12 @@ public class Meat extends Material {
         LocalDate today = LocalDate.now();
         if (today.isBefore(getExpiryDate()) &&
                 (today.isAfter(getExpiryDate().minusDays(5)))){
-            System.out.println("--> Giá thịt đang giảm 30%: ");
-            return getAmount() * 0.7;
+//            System.out.println("--> Giá thịt đang giảm 30%: ");
+            return getPrice() * 0.7;
         } else if (today.isBefore(getExpiryDate().minusDays(5)) &&
                 today.isAfter(getManufacturingDate())){
-            System.out.println("--> Giá thịt đang giảm 10%: ");
-            return getAmount() * 0.9;
+//            System.out.println("--> Giá thịt đang giảm 10%: ");
+            return getPrice() * 0.9;
         } else {
             System.out.println("!@#$ Thịt đã hết hạn: ");
             return -1;

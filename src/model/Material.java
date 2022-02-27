@@ -1,8 +1,10 @@
-package com.company;
+package model;
+
+import controller.Discount;
 
 import java.time.LocalDate;
 
-public abstract class Material implements Discount{
+public abstract class Material implements Discount {
     private String id;
     private String name;
     private LocalDate manufacturingDate;
@@ -50,7 +52,7 @@ public abstract class Material implements Discount{
         this.cost = cost;
     }
 
-    public abstract double getAmount();
+    public abstract double getPrice();
     public abstract LocalDate getExpiryDate();
 
     @Override
