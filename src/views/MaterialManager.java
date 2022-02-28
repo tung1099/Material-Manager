@@ -26,7 +26,7 @@ public class MaterialManager {
         materials.add(crispyFlour4);
         materials.add(crispyFlour5);
 
-        Meat meat1 = new Meat("M1", "Meat 1", LocalDate.of(2022, 2, 26), 100, 1200);
+        Meat meat1 = new Meat("M1", "Meat 1", LocalDate.of(2022, 2, 25), 100, 1200);
         Meat meat2 = new Meat("M2", "Meat 2", LocalDate.of(2022, 2, 2), 100, 20);
         Meat meat3 = new Meat("M3", "Meat 3", LocalDate.of(2022, 2, 22), 100, 2000);
         Meat meat4 = new Meat("M4", "Meat 4", LocalDate.of(2022, 2, 23), 100, 400);
@@ -37,26 +37,31 @@ public class MaterialManager {
         materials.add(meat4);
         materials.add(meat5);
 
-        System.out.println("Danh sách sản phẩm: ");
-        for (Material material: materials
-        ) {
-            System.out.println(material.toString());
-
-        }
-
         Scanner scanner = new Scanner(System.in);
-        System.out.println("1. Thêm nguyên liệu bột ");
-        System.out.println("2. Thêm nguyên liệu thịt");
+        System.out.println("1. Danh sách sản phẩm ");
+        System.out.println("2. Thêm nguyên liệu bột ");
+        System.out.println("3. Thêm nguyên liệu thịt");
         System.out.println("Lựa chọn: ");
         int choice = scanner.nextInt();
         switch (choice){
             case 1:
-                Method.addCrispyFlour(materials);
-                System.out.println(materials);
+                for (Material material:materials
+                     ) {
+                    System.out.println(material.toString());
+
+                }
                 break;
             case 2:
-                Method.addMeat(materials);
+                Method.addCrispyFlour(materials);
+                System.out.println("Add success!");
+                System.out.println(materials);
                 break;
+            case 3:
+                Method.addMeat(materials);
+                System.out.println("Add success!");
+                System.out.println(materials);
+                break;
+
         }
 
         double totalPrice = 0;

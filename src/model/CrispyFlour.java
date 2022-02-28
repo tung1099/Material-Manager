@@ -59,7 +59,7 @@ public class CrispyFlour extends Material {
             return getPrice()*0.95;
         }
         else {
-            System.out.println("!@##$$ Bột đã hết hạn: ");
+            System.out.println(".......Bột đã hết hạn: ");
             return -1;
         }
 

@@ -51,7 +51,7 @@ public class Meat extends Material {
 //            System.out.println("--> Giá thịt đang giảm 10%: ");
             return getPrice() * 0.9;
         } else {
-            System.out.println("!@#$ Thịt đã hết hạn: ");
+            System.out.println(".......Thịt đã hết hạn: ");
             return -1;
         }
     }

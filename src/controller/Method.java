@@ -16,7 +16,7 @@ public class Method {
         String id = scanner.nextLine();
         System.out.print("Name: ");
         String name = scanner.nextLine();
-        System.out.print("NSX: ");
+        System.out.println("NSX: ");
         int year = scanner.nextInt();
         int month = scanner.nextInt();
         int day = scanner.nextInt();
@@ -33,21 +33,15 @@ public class Method {
         String id = scanner.nextLine();
         System.out.print("Name: ");
         String name = scanner.nextLine();
-        System.out.print("NSX: ");
+        System.out.println("NSX: ");
         int year = scanner.nextInt();
         int month = scanner.nextInt();
         int day = scanner.nextInt();
         System.out.print("Cost: ");
         int cost = scanner.nextInt();
-        System.out.print("Quantity: ");
-        int quantity = scanner.nextInt();
-        Material meat = new Meat(id, name, LocalDate.of(year,month,day), cost, quantity);
+        System.out.print("Weight: ");
+        double weight = scanner.nextInt();
+        Material meat = new Meat(id, name, LocalDate.of(year,month,day), cost, weight);
         list.add(meat);
     }
-//    public static void display(ArrayList<Material> list){
-//        for (Object m: list
-//             ) {
-//            System.out.println(m);
-//        }
-//    }
 }
